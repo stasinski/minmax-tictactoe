@@ -134,7 +134,6 @@ export const response = (grid) => {
 
   if (!bestMove) {
     const randomPick = Math.ceil(Math.random() * filteredGrid.length);
-    console.log(randomPick);
     return filteredGrid[randomPick - 1].cell;
   } else {
     return grid[bestMove.id].cell;
