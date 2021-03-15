@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import { initalGrid } from "./initialGrid";
 import { result as checkWinner } from "./result";
+import { response } from "./computerResponse";
 
 const gridDom = document.querySelector(".grid");
 const cells = document.querySelectorAll(".cell");
@@ -56,7 +57,19 @@ const handleGridClick = (e) => {
     addCellText(cellId);
     togglePlayer();
     checkResult(grid);
+    if (!finished) {
+      handleComputerResponse();
+    }
   }
+};
+
+const handleComputerResponse = () => {
+  const pickCell = response(grid);
+  grid[pickCell - 1].taken = player;
+
+  addCellText(pickCell);
+  togglePlayer();
+  checkResult(grid);
 };
 
 function startGame() {
