@@ -4,4 +4,5 @@
 .cell {
   height: 200px;
   cursor: pointer;
+  font-size: 5rem;
 }
