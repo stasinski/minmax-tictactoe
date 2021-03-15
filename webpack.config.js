@@ -9,7 +9,6 @@ module.exports = {
   entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    // filename: "main.[contenthash].js",
     filename: "main.js",
   },
   module: {
@@ -26,7 +25,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      //   filename: "[name].[contenthash].css",
       filename: "[name].css",
     }),
     new CssMinimizerPlugin(),
